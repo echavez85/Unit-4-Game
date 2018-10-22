@@ -10,33 +10,59 @@
     <title>Crystals Collector</title>
 </head>
 <body>
-    <header>Crystals Collector!</header>
-    <!-- Instructions text will go here. -->
-    <div id="instructions">
-        <p>You will be given a random number at the start of the game.</p>
-        <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
-        <p>You win the game by matching your total score to random number. You lose the game if your total score goes above the random number.</p>
-        <p>The value of each crystal is hidden from you until you click on it.</p>
-        <p>Each time the game restarts, the value of the random number and </p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <header>Golden Girls!</header>
+            </div>
+        </div>
+        <!-- Instructions text will go here. -->
+        <div class="row">
+            <div class="col-md-12" id="instructions">
+                <p>You will be given a random number at the start of the game.</p>
+                <p>There are four Golden Girls below. By clicking on a Golden Girl you will add a specific amount of points to your total score.</p>
+                <p>You win the game by matching your total score to random number. You lose the game if your total score goes above the random number.</p>
+                <p>The value of each Golden Girl is hidden from you until you click on her.</p>
+                <p>Each time the game restarts, the value of the random number and the value of each Golden Girl resets.</p>
+            </div>
+        </div>
+        <!-- Random Number generated will go in here, pushed from JS. -->
+        <div class="row">
+            <div class="col-md-6" id="randomNumber"></div> 
+        <!-- Game wins and losses will be pushed here. -->
+            <div class="col-md-6" id="gameScore">
+                <p>Wins:</p>
+                <p>Losses:</p>
+            </div>
+        </div>
+        <!-- Golden Girls Images will go here. Value will be randomly assigned to each from JS. -->
+        <div class="row" id="goldenGirlsImages">
+            <div class="col-md-3">
+                <button class="btn btn-default" id="dorothyBtn">
+                    <img src="images/dorothy.jpeg">
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-default" id="roseBtn">
+                    <img src="images/rose.jpeg">
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-default" id="blancheBtn">
+                    <img src="images/blanche.jpeg">
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-default" id="sophiaBtn">
+                    <img src="images/sophia.jpeg">
+                </button>
+            </div>
+        </div>
+        <!-- Sum of Golden Girls clicked will be pushed here from JS. -->
+        <div>
+            <p>Your Golden Girls score is:</p>
+        </div>
+        <div id="goldenGirlsScore"></div>
     </div>
-    <!-- Random Number generated will go in here, pushed from JS. -->
-    <div id="randomNumber"></div>
-    <!-- Game wins and losses will be pushed here. -->
-    <div id="gameScore">
-        <p>Wins:</p>
-        <p>Losses:</p>
-    </div>
-    <!-- Crystal Images will go here. Value will be randomly assigned to each from JS. -->
-    <div id="crystalImages">
-        <img>
-        <img>
-        <img>
-        <img>
-    </div>
-    <!-- Sum of crystals clicked will be pushed here from JS. -->
-    <div>
-        <p>Your crystals score is:</p>
-    </div>
-    <div id="crystalScore"></div>
 </body>
 </html>
