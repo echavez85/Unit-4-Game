@@ -1,10 +1,62 @@
-// Function to select a random number between 5 and 75 and place in #randomNumber.
+
+// Global variables
+
+// Game Counters
+var winNumber = 0;
+var lossNumber = 0;
+
+// Computer selected number
+var randomNumber = "";
+
+// Calculation of Girls chosen
+var cumulativeGirls = 0;
+
+// Variable for the images
+var images = ["./assets/images/blanche.jpeg", "./assets/images/dorothy.jpeg", "./assets/images/rose.jpeg", "./assets/images/SVGPathSegLinetoHorizontalAbs.jpeg"]
 
 
-// Function to count wins vs. losses.
+funtion randomTargetNumber () {
+    randomNumber = Math.floor(Math.random() * 102) +19;
+}
 
-// Function will assign a random number between 1 and 9 to each of the Golden Girls. This number will change every "new game". This will probably be like the numbers on a calculator, an addition symbol, and equal sign all combined so that numbers can add up.
+function resetGirls () {
+    for(var i = 0; i < images.length; i++) {
+        var girl = $("<img>");
+        girl.addClass("girl");
+        girl.attr("src", images[i]);
+        girl.attr("value", (Math.floor(Math.random() *12) + 1));
+        girl.attr("height", "100");
+        $("#goldenGirlsImages").append(girl);
+    }
+}
 
-// This will add up/display the total value of the Golden Girls in the same way the result area did on the calculator.
+function resetHTML () {
+    $("#randomNumber").html(randomNumber);
+    $("#gameScore").html("<p>Wins: " + winNumber + "</p>" + "<p>Losses: " + lossNumber + "</p>");
+    $("goldenGirlsScore").html(cumulativeGirls);
+    $("#goldenGirlsImages").empty();
+}
 
-// If result above is higher than random number generated above, loss will increase. If it's lower, nothing done. If it's equal, wins will increase.
+function totalReset () {
+    randomTargetNumber ();
+    cumulativeGirls = 0;
+    resetHTML ();
+    resetGirls ();
+}
+
+randomNumber ();
+resetHTML ();
+resetGirls ();
+
+function girlClick () {
+    cumulativeGirls += parseInt($(this).attr("value"));
+    $("#goldenGirlsScore").html(cumulativeGirls);
+    if (cumulativeGirls == randomNumber) {
+        winNumber++;
+        totalReset();
+    }
+    else if (cumulativeGirls > randomNumber) {
+        lossNumber++;
+        totalReset();
+    };
+};
