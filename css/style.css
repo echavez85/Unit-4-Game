@@ -2,5 +2,18 @@ body {
     background-image: url("../images/dark_embroidery.png");
     color: gold;
     font-family: cursive;
+    text-align: center;
+}
+
+header {
+    font-size: 60px;
+}
+
+#instructions {
+    font-size: 16px;
+}
+
+#randomNumber {
+    font-size: 30px;
 }
 
