@@ -30,7 +30,7 @@ $(document).ready(function() {
    };
 
    function generateGirlsNumbers () {
-        return Math.floor(Math.random() * 12) + 1;
+        return Math.floor(Math.random() * 11) + 1;
    }
 
 
@@ -38,6 +38,7 @@ $(document).ready(function() {
    $("#dorothy").on("click", function() {
        counter += dorothyNumber;
        $("#goldenGirlsScore").text(counter);
+       console.log(counter);
        checkWin();
 
    });
@@ -45,20 +46,23 @@ $(document).ready(function() {
    $("#rose").on("click", function() {
        counter += roseNumber;
        $("goldenGirlsScore").text(counter);
+       console.log(counter);
        checkWin();
    });
 
    $("#blanche").on("click", function() {
        counter += blancheNumber;
        $("goldenGirlsScore").text(counter);
+       console.log(counter);
        checkWin();
    });
 
    $("#sophia").on("click", function() {
        counter += sophiaNumber;
        $("goldenGirlsScore").text(counter);
+       console.log(counter);
        checkWin();
-   })
+   });
 
     beginGame();
     
@@ -68,14 +72,14 @@ $(document).ready(function() {
        if (counter > targetNumber) {
            losses++;
         
-        $("#losses").text(losses);
+        $("#losses").text("Losses: " + losses);
         beginGame();
        }
 
        else if (counter === targetNumber) {
            wins++;
 
-        $("#wins").text(wins);
+        $("#wins").text("Wins: " + wins);
         beginGame();
        }
    }
