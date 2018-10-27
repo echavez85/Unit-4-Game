@@ -40,10 +40,49 @@ $(document).ready(function() {
        $("#goldenGirlsScore").text(counter);
        checkWin();
 
-   })
-   
+   });
 
-})
+   $("#rose").on("click", function() {
+       counter += roseNumber;
+       $("goldenGirlsScore").text(counter);
+       checkWin();
+   });
+
+   $("#blanche").on("click", function() {
+       counter += blancheNumber;
+       $("goldenGirlsScore").text(counter);
+       checkWin();
+   });
+
+   $("#sophia").on("click", function() {
+       counter += sophiaNumber;
+       $("goldenGirlsScore").text(counter);
+       checkWin();
+   })
+
+    beginGame();
+    
+// Function called above where win/loss will be cheched.
+
+   function checkWin() {
+       if (counter > targetNumber) {
+           losses++;
+        
+        $("#losses").text(losses);
+        beginGame();
+       }
+
+       else if (counter === targetNumber) {
+           wins++;
+
+        $("#wins").text(wins);
+        beginGame();
+       }
+   }
+
+});
+
+
         
         
 
