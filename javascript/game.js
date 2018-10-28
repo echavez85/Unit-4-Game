@@ -11,7 +11,7 @@ $(document).ready(function() {
     var sophiaNumber = "";
     
 
-// Upon game initialization, random number between 19 and 120 should be assigned to #randomNumber div. Random number between 1 and 12 should be assigned to each of the Golden Girls images.
+// Upon game initialization, random number between 19 and 120 should be assigned to #randomNumber div.
    function generateTargetNumber () {
         return Math.floor(Math.random() * 102) + 19;
    }
@@ -24,17 +24,19 @@ $(document).ready(function() {
        blancheNumber = generateGirlsNumbers();
        sophiaNumber = generateGirlsNumbers();
 
-       $("#randomNumber").text(targetNumber);
+       $("#randomNumber").text("Your Target Number is: " + targetNumber);
        $("#goldenGirlsScore").text(counter);
 
    };
 
+
+//  Random number between 1 and 12 should be assigned to each of the Golden Girls images.  
    function generateGirlsNumbers () {
         return Math.floor(Math.random() * 11) + 1;
    }
 
 
-//Functions for each of the Golden Girls to get a number assigned when clicked on. Click event should also check to see if Golden Girls Score is equal to or greater than Target Number.
+//Functions for each of the Golden Girls to get a number assigned when clicked on using function above. Click event should also check to see if Golden Girls Score is equal to or greater than Target Number.
    $("#dorothy").on("click", function() {
        counter += dorothyNumber;
        $("#goldenGirlsScore").text(counter);
@@ -45,28 +47,28 @@ $(document).ready(function() {
 
    $("#rose").on("click", function() {
        counter += roseNumber;
-       $("goldenGirlsScore").text(counter);
+       $("#goldenGirlsScore").text(counter);
        console.log(counter);
        checkWin();
    });
 
    $("#blanche").on("click", function() {
        counter += blancheNumber;
-       $("goldenGirlsScore").text(counter);
+       $("#goldenGirlsScore").text(counter);
        console.log(counter);
        checkWin();
    });
 
    $("#sophia").on("click", function() {
        counter += sophiaNumber;
-       $("goldenGirlsScore").text(counter);
+       $("#goldenGirlsScore").text(counter);
        console.log(counter);
        checkWin();
    });
 
     beginGame();
     
-// Function called above where win/loss will be cheched.
+// Function called above where win/loss will be checked.
 
    function checkWin() {
        if (counter > targetNumber) {
@@ -81,15 +83,10 @@ $(document).ready(function() {
 
         $("#wins").text("Wins: " + wins);
         beginGame();
+
+        document.getElementById("goldenGirlsTheme").play();
+        alert("Thank you for being a WINNER!");
        }
    }
 
 });
-
-
-        
-        
-
-
-
-// Add up the amount that the Golden Girls add up to and calculate in #goldenGirlsScore div. Compare to randomNumber. If sum is equal to random numbers, increase wins and restart. If sum is greater, increase losses and restart. 
