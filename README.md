@@ -4,3 +4,5 @@ Golden Girls Collector is a game where players gain points by clicking on one of
 
 Once the game is won or lost, a new Random Number is generated and each of the Golden Girls are assigned a new value.
 
+https://echavez85.github.io/Unit-4-Game/
+
